@@ -42,6 +42,7 @@ def computer_version(secret_number, chances=5, max_number=100):
         else:
             low = computer_guess + 1
     print("The computer is out of guesses. You win!")
+    return 1
 
 
 computer_version(secret_number)
