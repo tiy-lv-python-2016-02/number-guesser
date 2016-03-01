@@ -2,8 +2,6 @@
 
 import random
 
-# Add different options?
-
 print("",
       "The computer has selected a number from 1 to 100. You have 5 tries to guess it",
       sep="\n"
@@ -12,10 +10,14 @@ print("",
 secret_number = random.randint(1, 100)
 chances = 5
 
-# Tell if close
-# docstring
 
 def game(chances, secret_number):
+    """
+    print statements include blank new lines for formatting.
+    :param chances: The number of guesses allowed.
+    :param secret_number: The number to be guessed.
+    :return: Will return either a winning or losing message.
+    """
     for counter in range(chances):
         print("You have {} guesses remaining".format(chances - counter), "", sep="\n")
         guess = ""
