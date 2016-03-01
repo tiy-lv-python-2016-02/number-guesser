@@ -14,6 +14,7 @@ chances = 5
 def game(chances, secret_number):
     """
     print statements include blank new lines for formatting.
+    The player gets a warning when their guess is within 4.
     :param chances: The number of guesses allowed.
     :param secret_number: The number to be guessed.
     :return: Will return either a winning or losing message.
