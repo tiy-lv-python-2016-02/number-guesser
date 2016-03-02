@@ -6,7 +6,6 @@ max_number = 100
 
 print("", "Please enter a number from 1 to {} for the computer to guess.".format(max_number), sep="\n")
 
-
 secret_number = ""
 
 # Run until user enters a valid secret number.
@@ -17,13 +16,31 @@ secret_number = int(secret_number)
 
 
 def close_call(low, high, guess, guessed_high):
+    """
+    This function updates the computer's guessing range when it makes a close
+    guess, meaning that it knows it is less than 5 away from the answer.
+
+    The parameters are straightforward. This function is mainly here to keep
+    the main function from getting too cluttered.
+    """
     if guessed_high:
-        return max([guess - 3]), min([guess - 1, high])
+        return max([guess - 4, low]), min([guess - 1, high])
     else:
         return max([guess + 1, low]), min([guess + 4, high])
 
 
 def computer_version(secret_number, chances=5, max_number=100):
+    """
+    Just like the player version, the computer gets a warning when it's guess
+    is less than 5 away from the number.
+
+    Chances and max_number have defaults but can be adjusted to change the difficulty
+
+    :param secret_number: The number to be guessed.
+    :param chances: The allowed number of guesses.
+    :param max_number: Highest possible secret number.
+    :return: Winning or losing message
+    """
     low, high = 1, max_number
 
     for counter in range(chances):
@@ -43,6 +60,5 @@ def computer_version(secret_number, chances=5, max_number=100):
             low = computer_guess + 1
     print("The computer is out of guesses. You win!")
     return 1
-
 
 computer_version(secret_number)
