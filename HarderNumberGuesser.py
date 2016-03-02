@@ -31,6 +31,8 @@ def close_call(low, high, guess, guessed_high):
 
 def computer_version(secret_number, chances=5, max_number=100):
     """
+    Low and high are the min/max possible guesses for the computer player.
+
     Just like the player version, the computer gets a warning when it's guess
     is less than 5 away from the number.
 
@@ -58,7 +60,8 @@ def computer_version(secret_number, chances=5, max_number=100):
             high = computer_guess - 1
         else:
             low = computer_guess + 1
+
     print("The computer is out of guesses. You win!")
-    return 1
+
 
 computer_version(secret_number)
